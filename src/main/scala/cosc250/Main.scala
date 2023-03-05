@@ -27,7 +27,8 @@ object Main {
       "Home" -> site.HomeRoute,
       
       "Weekly live sessions" -> site.Toc(
-        "Week 1" -> site.addDeck("week1", livesessions.week1),
+        "Wk 1: Orientation" -> site.addDeck("week1", livesessions.week1),
+        "Wk 2: Tooling" -> site.addDeck("week2", livesessions.week2),
         /*"Intro to Scala syntax" -> site.add("introScala", 
           Alternative("Slide deck", Deck(() => imperative.introScala)),
           Alternative("Watch the video", Video(() => Echo360Video("92548534-cc2c-4661-99d4-f2dfc1e26309"))),
