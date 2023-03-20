@@ -1,7 +1,7 @@
 enablePlugins(ScalaJSPlugin)
 
 name := "Will Scala"
-scalaVersion := "3.1.1"
+scalaVersion := "3.2.2"
 
 // This is an application with a main method
 scalaJSUseMainModuleInitializer := true
