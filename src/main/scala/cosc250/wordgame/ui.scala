@@ -14,7 +14,7 @@ lazy val wordList =
     for 
         words <- Fetch.fetch("resources/words.txt").toFuture
         text <- words.text().toFuture
-    yield text.split("\r\n")
+    yield text.linesIterator.toSeq
 
 
 class FutureComponent(f:Future[VHtmlContent]) extends DHtmlComponent with Keep(f) {
