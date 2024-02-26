@@ -18,7 +18,7 @@ val week1 = DeckBuilder(1280, 720)
       |
       |## Live session 1
       |
-      |*Monday 27 Feb 2023*
+      |*Tuesday 27 Feb 2024*
       |
       |""".stripMargin
   ).withClass("center middle")
@@ -47,7 +47,7 @@ val week1 = DeckBuilder(1280, 720)
     |  - extra examples
     |  - content I haven't had time to record or is experimental
     |
-    |In 2023, most of the updates will be focused on the second half of the unit:
+    |In 2024, most of the updates will be focused on the second half of the unit:
     |
     | - Reactive programming
     | - Big and Fast data
@@ -59,7 +59,7 @@ val week1 = DeckBuilder(1280, 720)
     |*Note*: 
     |
     |* What's on handbook.une.edu.au trumps everything
-    |* What's on Moodle trumps what's in these slides
+    |* What's on myLearn trumps what's in these slides
     |
     |i.e. this slide deck is an overview of the updates, not a definition of them.
     |
@@ -67,18 +67,7 @@ val week1 = DeckBuilder(1280, 720)
     |
     |## Assessment structure
     |
-    |* Quizzes - 10% of the unit; generally to help you keep up with the content.  
-    |  These are untimed and unproctored.
-    |
-    |* Assessment 1 - 10% of the unit; shot programming tasks to get you over the hurdle of Scala syntax.  
-    |  
-    |* Assessment 2 - 20% of the unit; a longer programming task but still with quite a lot of structure already provided.
-    |
-    |* Assessment 3 - 30% of the unit; bigger again & typically includes asynchronous (reactive) programming and streams
-    |
-    |* Final exam - 30% of the unit. Proctored. Typically short answer and programming tasks. 
-    |
-    |* Alternative assessment - for students approved for this (apply via AskUNE). Typically **longer than the final exam**.
+    |* Tour via handbook and myLearn
     |
     |But... we're going to need to make some changes because of Generative AI
     |
@@ -148,29 +137,25 @@ val week1 = DeckBuilder(1280, 720)
     |
     |## Assessment 3
     |
-    |Assessment 3 typically includes an async library. In the past, this has been Akka, but 
-    |Akka is moving away from open source.
+    |Assessment 3 typically includes an async library. 
     |
-    |The "Reactive Programming" block of the unit will also probably see some updates
+    |It's also taking the place of the exam & may include some of the features of the old "alternative assessment"
     |
     |
     |---
     |
     |## Final exam
     |
-    |* In 2023, this will need to move to being **closed book**
+    |* In 2024, there is no final exam
     |
-    |  - The exam is not intended to be a step-up in difficulty from the assessments
-    |  - For short answer understanding questions and short coding problems, AI could write the answers  
-    |  - So let's rely on the proctoring to stop AI being used, rather than make the questions more awkward
+    |  - Although the *exam* would have fit in the compressed exam period, I'm not sure the alt assessment would have
+    |  - The short timeframes of an exam are dissatisfying
     |
-    |* The alternative assessment will need to get bigger
+    |* Assessment 3 will need to get bigger
     |
     |  - The alternative assessment isn't proctored, so we have to do more to defend its integrity
-    |  - That probably means it'll be more assignment-like than exam-like
-    |  - Consider whether you have the additional time available to you before applying for alt assessment  
-    |    (though an SET might also be possible)
-    |
+    |  - video
+    |  - data trails from some of your work
     |
     |---
     |
@@ -181,35 +166,13 @@ val week1 = DeckBuilder(1280, 720)
     |You have several options for how to do your programming, but there are some trade-offs
     |
     |* On **turing** (our student development server)
-    |  - Most things are already installed and set up, but...
-    |  - You will need to remember to "setproxy" before you *first* run SBT
-    |  - You should not use IntelliJ IDEA; its Scala plugin can leak your password
-    |  - You can use Visual Studio Code, but don't install the "Metals" plugin yet.  
-    |    (It will give you some annoying errors to get past, and you don't need it yet)
+    |  - It's already installed and set up
+    |  - Visual Studio Code's "Remote SSH" plugin works well for accessing turing
+    |  - But you'll need an x2go session if you want to run programs that have a UI (e.g. A2, A3)
     |
     |* On **your own computer**
     |  - There are dozens of different ways of installing the tools!
-    |  - Java, sbt, git, and an IDE. 
-    |  - Start just by using a text editor and the command line (sbt). Only bring an IDE into it
-    |    when you're more comfortable with the language and tools.
-    |
-    |---
-    |
-    |## OS choices...
-    |
-    |* On **Windows**
-    |  - Coursier is the recommended installation tool. https://docs.scala-lang.org/getting-started/index.html
-    |  - IntelliJ IDEA with the Scala plugin is very nice
-    |  - You can trip over permission errors if another process has a file or directory open
-    |
-    |* On **Mac**
-    |  - The installation instructions assume you already have homebrew installed
-    |  - Developing on Mac is generally a nicer experience  
-    |    It's Unix-like and the permission errors from directories being open elsewhere don't happen
-    |
-    |* On **Docker**
-    |  - I do include "development container" configuration in a lot of repositories as I tend to use this from home
-    |  - but we're not going to cover how it works in this unit. (It's in COSC220.)
+    |  - Scala-lang's setup instructions are pretty good. Use them. Unless you're on mac, where you *might* want to use sdkman
     |
     |""".stripMargin
   )
