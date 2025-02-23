@@ -14,11 +14,11 @@ import cosc250.Common.imageSlide
 val week1 = DeckBuilder(1280, 720) 
   .markdownSlide(
     """
-      |# COSC250 Functional and Reactive Programming
+      |# COSC250 Programming Paradigms
       |
-      |## Live session 1
+      |## Welcome
       |
-      |*Tuesday 27 Feb 2024*
+      |*Monday 24 Feb 2025*
       |
       |""".stripMargin
   ).withClass("center middle")
@@ -41,16 +41,53 @@ val week1 = DeckBuilder(1280, 720)
     |  This is on **Echo360** in folders matching the Moodle blocks. Though each year
     |  *some of it will need updating*
     |
-    |* **Live sessions** (e.g. today) are for
+    |* **Lecture sessions** (e.g. today) are for
     |  - discussion
     |  - Q&A
     |  - extra examples
     |  - content I haven't had time to record or is experimental
     |
-    |In 2024, most of the updates will be focused on the second half of the unit:
+    |---
     |
-    | - Reactive programming
-    | - Big and Fast data
+    |## A way to think about it 
+    |
+    |One of the things people find hard to keep error-free in programming is
+    |
+    |> shared mutable data
+    |
+    |We're going to end up seeing 3 different ways programming languages avoid this problem:
+    |
+    |* Functional programming (avoid "mutable")
+    |* Concurrency-oriented programming (avoid "shared")
+    |* Rust (disallow things being both mutable and shared at the same time - by having the compiler track ownership and borrowing)
+    |
+    |That's not all we'll see in these different paradigms, but it can be a handy mnemonic
+    |
+    |---
+    |
+    |## Structure of the course
+    |
+    |I try to keep most of the content in Scala. Scala is a "multi-paradigm language", which means I can show you a lot of things in it.
+    |
+    |It's used by some well known places (e.g. Disney+, The Guardian, ITV+, LinkedIn) 
+    |
+    |* Imperative programming
+    |  Scala syntax and also learn about how compilers change our code
+    |
+    |* Functional programming
+    |  Basic functional programming, like you could do in Haskell, Scheme, Lisp, etc
+    |
+    |* Type systems
+    |  Ways we can make compiler check our code more tightly, so it can catch more bugs
+    |
+    |* Effects
+    |  Tracking when our code changes things and talks to the outside world
+    |
+    |* Reactive programming
+    |  Everything from button clicks, to async, to processing fast streams of data
+    |
+    |* Rust
+    |  Automatic memory management without garbage collection, but with a new set of compiler rules
     |
     |---
     |
@@ -159,20 +196,16 @@ val week1 = DeckBuilder(1280, 720)
     |
     |---
     |
-    |## The first problem you'll face
+    |## Scala's tooling system
     |
-    |Scala is a well designed programming language... with a messy tooling ecosystem.
+    |Scala is a well designed programming language and the tools are getting simple to use... but under the hood, they do a lot
     |
-    |You have several options for how to do your programming, but there are some trade-offs
+    |scala (or scala-cli) can do much more than just compile your code:
     |
-    |* On **turing** (our student development server)
-    |  - It's already installed and set up
-    |  - Visual Studio Code's "Remote SSH" plugin works well for accessing turing
-    |  - But you'll need an x2go session if you want to run programs that have a UI (e.g. A2, A3)
-    |
-    |* On **your own computer**
-    |  - There are dozens of different ways of installing the tools!
-    |  - Scala-lang's setup instructions are pretty good. Use them. Unless you're on mac, where you *might* want to use sdkman
+    |* Package management
+    |* Unit testing
+    |* Talking to your IDE
+    |* Cross-compiling to JavaScript
     |
     |""".stripMargin
   )
