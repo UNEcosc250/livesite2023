@@ -24,7 +24,7 @@ val week2 = DeckBuilder(1280, 720)
     """
     |## Tooling
     |
-    |Scala is (in my view) a tidy and conceptually clean language ... with a messy tooling ecosystem.
+    |We met many of the tools we're using, e.g. `scala-cli` last week.
     |
     |A lot of the tooling is hidden behind the scenes, but let's go through what things are...
     |
@@ -64,17 +64,36 @@ val week2 = DeckBuilder(1280, 720)
     |
     |---
     |
+    |### Scala-CLI
+    |
+    |Scala-CLI is the standard Scala runner (from Scala 3.5). It doesn't call itself a build tool, but has a lot of similarites
+    |
+    |It uses `bloop` behind the scenes to do fast incremental compilation. More on that later.
+    |
+    |With Scala-CLI
+    |
+    |* There is no build definition file
+    |
+    |* Intead, build directives are specified in the source code
+    |
+    |e.g.
+    |
+    |```scala
+    |//> using dep "com.wbillingsley::doctacular::0.3.0"
+    |
+    |import com.wbillingsley.veautiful.html.*
+    |import com.wbillingsley.veautiful.doctacular.*
+    |```
+    |
+    |---
+    |
     |### SBT
     |
-    |SBT is the build tool for Scala. We started using it in week 1's tutorial
+    |SBT is the build tool for professional Scala projects. It's more powerful than Scala-CLI, but requires a build definition file.
     |
-    |It can 
+    |Typically, as soon as a project requires more than one module (e.g. you have a client and a server), you'll need to switch to SBT.
     |
-    |* Call coursier to download your libraries
-    |* Compile your code
-    |* Run your code
-    |* Run tests
-    |* Any other tasks we define for it
+    |Though you also might want to switch if you're using Scala.js or something else that makes your compile command long.
     |
     |A project's build definition:
     |
@@ -213,36 +232,13 @@ val week2 = DeckBuilder(1280, 720)
     """
     |### Fixing Metals:
     |
-    |Typically:
-    |
-    |* Make sure you switch the build server to sbt **before** you import the project
-    |
     |* Sometimes the IDE seems to get out of sync and an `sbt clean` or even:
     |  - closing the IDE
     |  - stopping SBT
     |  - `git clean -Xfd` (which deletes all the files that aren't in version control)
     |  to get it back into a known-working state
     |
-    |---
     |
-    |### Scala-CLI
-    |
-    |Scala-CLI is a new project that aims to make it easy to write command-line applications in Scala.
-    |
-    |It has a much simpler interface ... but uses bloop behind the scenes (so we need to test it!)
-    |
-    |* Unlike SBT, *there is no build definition file*
-    |
-    |* Intead, build directives are specified in the source code
-    |
-    |e.g.
-    |
-    |```scala
-    |//> using dep "com.wbillingsley::doctacular::0.3.0"
-    |
-    |import com.wbillingsley.veautiful.html.*
-    |import com.wbillingsley.veautiful.doctacular.*
-    |```
     |
     |---
     |
