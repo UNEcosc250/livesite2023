@@ -18,7 +18,7 @@ val week1 = DeckBuilder(1280, 720)
       |
       |## Welcome
       |
-      |*Monday 24 Feb 2025*
+      |*Monday 23 Feb 2026*
       |
       |""".stripMargin
   ).withClass("center middle")
@@ -26,9 +26,54 @@ val week1 = DeckBuilder(1280, 720)
     """
     |## Agenda
     |
+    |0. This unit and AI...
     |1. Where the content is...
     |2. Where the assessments are...
     |3. The first problem you'll face...
+    |
+    |---
+    |
+    |## COSC250 and AI
+    |
+    |* AI can generate code really fast, in lots of languages. Not just by you...
+    |
+    |* The more and faster AI can generate code, the more code you have to deal with in the same amount of time...
+    |
+    |I have a hunch that the shift towards AI will create a move towards languages with tighter compilers
+    |
+    |* LLMs can be sloppy; they're text-based and general purpose and generate code linearly token-by-token
+    |
+    |* Pairing that with a precise compiler that can catch more of its errors sounds (to me) like a good idea
+    |
+    |In which case -
+    |
+    |* You're likely to have to work with code created by AI in many languages in your career
+    |
+    |* Expressive languages that can describe code with good structure and a strong type system to catch errors will probably be a good thing
+    |
+    |* Static analysis, tracking of memory safety, and other ways of inspecting the quality of code are going to be important too. 
+    |
+    |---
+    |
+    |## So...
+    |
+    |* Gradually, COSC250's going to move to getting you to know what's going on in code quickly, rather than expecting it all to be hand-written
+    |
+    |* A1, A2, and A3 are all "Learning Tasks". You are permitted to use AI, but I very much recommend
+    |
+    |  - have a go at it manually *first* because you need to get your brain to grapple with the task for you to understand it
+    |  - but feel free to ask an LLM to explain what's going wrong or how to improve the code. Give it the error messages and the differences in output too.
+    |  - Cite the LLM where you've used its code. Some of it'll be conversational, in which case save the conversation out as a text/markdown file and include it in the zip (referencing it from comments in your code)
+    |
+    |---
+    |
+    |## There is an exam ...
+    |
+    |  - There's a 50% exam that you'll need to pass.
+    |  - Given you will probably be used to coding with an LLM, I'm not going to make you write long stretches of code without one (but might ask you to write a few fragments up to about 5 lines long)
+    |  - I will ask about concepts
+    |  - I will give you AI generated code and ask you about it
+    |  - Some questions from the quizzes may be repeated on the exam
     |
     |---
     |
@@ -100,101 +145,10 @@ val week1 = DeckBuilder(1280, 720)
     |
     |i.e. this slide deck is an overview of the updates, not a definition of them.
     |
-    |---
-    |
-    |## Assessment structure
-    |
-    |* Tour via handbook and myLearn
-    |
-    |But... we're going to need to make some changes because of Generative AI
-    |
-    |ChatGPT and Codex (GitHub Copilot) are good at writing short coding snippets. 
-    |
-    |Codex is especially brilliant at COSC250 tutorial solutions ... 
-    | ... because they're in its training set.
     |
     |""".stripMargin)
   .imageSlide("Codex knew it was my imperative week", "images/codex-autocomplete-tutorial1.png")
   .markdownSlides("""
-    |
-    |## Assessment 1
-    |
-    |Assessment 1 is a programming task to get you over the hurdle of Scala syntax.
-    |
-    |* It's short coding snippets. AI is very good at writing short coding snippets...
-    |
-    |* ... But if you just run the code through Codex, you'll be doing yourself a disservice.
-    |
-    |  - Assessment 1 is only worth 10% of the unit.
-    |  - Its purpose is to get **you** over the hurdle of Scala syntax.
-    |
-    |* So...
-    |
-    |  - Try to write the code yourself
-    |
-    |  - If you are stuck, ChatGPT or Codex can help give you some hints. 
-    |    (So can the comp-sci student Slack and Discord. A chat that helps you get over your syntax
-    |    problems isn't really that new, but the student chat is better at giving you clues and hints
-    |    so you'll learn rather than jumping to code to paste in)
-    |
-    |  - Note that it is **not permitted** to submit AI-written code unless you **cite the source**.  
-    |    (The university considers it contract cheating)
-    |
-    |---
-    |
-    |## Evidence of authenticity...
-    |
-    |- Some of the code sets might make web requests to Assessory.  
-    |  Don't remove these requests. (You wouldn't be doing yourself a favour).
-    |
-    |- A log of **you** developing your code over time is evidence that **you** wrote the code.
-    |  (The AI doesn't run tests and often AI-written code just works all at once on the first run) 
-    |
-    |
-    |---
-    | 
-    |## Assessment 2
-    |
-    |Assessment 2 is a longer programming task but still with quite a lot of structure already provided.
-    |
-    |* The code for assessment 2 is being re-visited.  
-    |  It used to be boids (a flocking simulation), but this might be too susceptible to AI.
-    |
-    |* It is under experimental redevelopment  
-    |  
-    |  - Might use a web UI, collecting some authenticity data from you running it
-    |
-    |  - Might use my own UI library, which Codex sometimes trips over 
-    |    (as it picks up old examples before the API changed slightly)
-    |
-    |* There will be a forum thread for hints: 
-    |  you are encouraged to describe problems you're having, but not to post code.
-    |
-    |---
-    |
-    |## Assessment 3
-    |
-    |Assessment 3 typically includes an async library. 
-    |
-    |It's also taking the place of the exam & may include some of the features of the old "alternative assessment"
-    |
-    |
-    |---
-    |
-    |## Final exam
-    |
-    |* In 2024, there is no final exam
-    |
-    |  - Although the *exam* would have fit in the compressed exam period, I'm not sure the alt assessment would have
-    |  - The short timeframes of an exam are dissatisfying
-    |
-    |* Assessment 3 will need to get bigger
-    |
-    |  - The alternative assessment isn't proctored, so we have to do more to defend its integrity
-    |  - video
-    |  - data trails from some of your work
-    |
-    |---
     |
     |## Scala's tooling system
     |
